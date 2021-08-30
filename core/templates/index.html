@@ -1,12 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
-</html>
+{% extends 'layout/base.html' %}
+
+{% block contant %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">رزومه آنلاین</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">خانه</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">جست‌و‌جو</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ساخت رزومه</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown link
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+      <form class="d-flex">
+        <input class="form-control m-1" type="search" placeholder="جست و جو" aria-label="جست و جو">
+        <button class="btn btn-outline-primary m-1" type="submit">جست‌و‌جو</button>
+      </form>
+    </nav>
+</nav>
+
+<div class="container-fluid py-5 bg-light my-5">
+  <div class="continer py-5 d-flex flex-column justify-content-center align-items-center">
+    <input type="text" class="form-control m-2 p-2" placeholder="به دنبال چه کسی هستید؟">
+    <input type="submit" value="پیدا کردن" class="btn btn-outline-primary btn-lg m-2">
+  </div>
+</div>
+{% endblock contant %}

@@ -1,1 +1,3 @@
 staticfiles/
+core/static/css/scss/
+core/static/css/style.scss
