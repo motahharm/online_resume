@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,12 +29,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 ROOT_URLCONF = 'core.urls'
+TEMPLATE_DIR = os.path.join(CORE_DIR, 'core/templates')
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,6 +85,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATIC_ROOT = os.path.join(CORE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(CORE_DIR, 'core/static'),
+)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
