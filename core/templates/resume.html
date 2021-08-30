@@ -1,0 +1,24 @@
+{% extends 'layout/base.html' %}
+
+{% block contant %}
+
+<div class="container-fluid py-5 bg-light">
+  <div class="container py-5">
+    <h1>{{profile.first_name}} {{profile.last_name}}</h1>
+    <h6>
+      {% if profile.confirmed == True %}
+      <span class="badge bg-success">تایید شده</span>
+      {% else %}
+      <span class="badge bg-danger">تایید نشده</span>
+      {% endif %}
+    </h6>
+    <p>{{profile.description}}</p><br><br><br>
+    {% if profile.confirmed == True %}
+    <h5 class="text-success">این حساب تایید شده است</h5>
+    {% else %}
+    <h5 class="text-danger">این حساب تایید نشده است</h5>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock contant %}
