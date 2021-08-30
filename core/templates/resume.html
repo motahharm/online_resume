@@ -12,7 +12,9 @@
       <span class="badge bg-danger">تایید نشده</span>
       {% endif %}
     </h6>
-    <p>{{profile.description}}</p><br><br><br>
+    <a href="#" class="btn btn-primary">دریافت رزومه PDF</a>
+    <div class="container border border-bottom border-1 border-dark my-2 rounded-3"></div>
+    <p>{{profile.description|linebreaks}}</p><br><br><br>
     {% if profile.confirmed == True %}
     <h5 class="text-success">این حساب تایید شده است</h5>
     {% else %}
