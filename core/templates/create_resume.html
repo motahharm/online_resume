@@ -1,0 +1,15 @@
+{% extends 'layout/base.html' %}
+
+{% block contant %}
+
+<div class="container-fluid py-5 bg-light text-center my-5">
+    <div class="container">
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ resume_create_form }}
+            <input type="submit" value="ثبت نام" class="btn btn-outline-primary">
+        </form>
+    </div>
+</div>
+
+{% endblock contant %}
