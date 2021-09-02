@@ -37,7 +37,7 @@ edit url and port:
 ScreenShots:
 ----
 
-![](ScreenShots/1.png)<br>
-![](ScreenShots/2.png)<br>
-![](ScreenShots/3.png)<br>
-![](ScreenShots/4.png)<br>
+![](https://github.com/motahharm/online_resume/blob/main/screenshots/1.png?raw=true)<br>
+![](https://github.com/motahharm/online_resume/blob/main/screenshots/2.png?raw=true)<br>
+![](https://github.com/motahharm/online_resume/blob/main/screenshots/3.png?raw=true)<br>
+![](https://github.com/motahharm/online_resume/blob/main/screenshots/4.png?raw=true)<br>
