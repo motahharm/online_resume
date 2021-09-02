@@ -2,28 +2,39 @@
 
 {% block contant %}
 
-<div class="container-fluid py-5 bg-light text-center my-5">
-    <form action="{% url 'search_resume' %}" method="POST"
-        class="container d-flex flex-column justify-content-center align-items-center my-5">{% csrf_token %}
+<div class="container-fluid py-5 bg-light my-5">
+    <form action="{% url 'search_resume' %}" method="GET" class="">{% csrf_token %}
         <input type="text" name="search" class="form-control m-2 p-2" placeholder="به دنبال چه کسی هستید؟">
         <input type="submit" value="پیدا کردن" class="btn btn-outline-primary btn-lg m-2">
     </form>
-    <div class="container">
-        <div class="list-group">
-            {% for resume in resumes %}
-            <a href="../../resume/{{resume.id}}" class="list-group-item list-group-item-action">
-                <h1>{{resume.first_name}} {{resume.last_name}}</h1>
-                <h6>
-                    {% if resume.confirmed == True %}
-                    <span class="badge bg-success">تایید شده</span>
-                    {% else %}
-                    <span class="badge bg-danger">تایید نشده</span>
-                    {% endif %}
-                </h6>
-            </a>
-            {% endfor %}
-        </div>
+    <div class="list-group">
+        {% for resume in resumes %}
+        <a href="../../resume/{{resume.id}}" class="list-group-item list-group-item-action">
+            <h1>{{resume.first_name}} {{resume.last_name}}</h1>
+            <h6>
+                {% if resume.confirmed == True %}
+                <span class="badge bg-success">تایید شده</span>
+                {% else %}
+                <span class="badge bg-danger">تایید نشده</span>
+                {% endif %}
+            </h6>
+        </a>
+        {% endfor %}
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% if resumes.has_previous == True %}
+                <li class="page-item"><a class="page-link" href="?page={{resumes.previous_page_number}}&search={{search}}">قبلی</a></li>
+                {% endif %}
+                {% for page in pages.page_range %}
+                <li class="page-item"><a class="page-link" href="?page={{page}}&search={{search}}">{{page}}</a></li>
+                {% endfor %}
+                {% if resumes.has_next == True %}
+                <li class="page-item"><a class="page-link" href="?page={{resumes.next_page_number}}&search={{search}}">بعدی</a></li>
+                {% endif %}
+            </ul>
+        </nav>
     </div>
+
 </div>
 
 {% endblock contant %}

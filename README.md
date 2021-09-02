@@ -33,3 +33,11 @@ edit url and port:
 - (your url) : (your port) =>  is home
 - (your url) : (your port) /profile/list =>  is list of resumes
 - (your url) : (your port) /resume/ (id resume) =>  is show resume
+
+ScreenShots:
+----
+
+![](ScreenShots/1.png)<br>
+![](ScreenShots/2.png)<br>
+![](ScreenShots/3.png)<br>
+![](ScreenShots/4.png)<br>

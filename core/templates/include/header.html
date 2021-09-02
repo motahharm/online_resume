@@ -22,8 +22,8 @@
       </ul>
     </div>
   </div>
-  <form class="d-flex">
-    <input class="form-control m-1" type="search" placeholder="جست و جو" aria-label="جست و جو">
+  <form class="d-flex" method="GET" action="{% url 'search_resume' %}">{% csrf_token %}
+    <input name="search" class="form-control m-1" type="search" placeholder="جست و جو" aria-label="جست و جو">
     <button class="btn btn-outline-primary m-1" type="submit">جست‌و‌جو</button>
   </form>
 </nav>

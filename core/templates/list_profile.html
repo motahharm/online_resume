@@ -4,7 +4,7 @@
 
 <div class="container-fluid py-5 bg-light my-5">
   <div class="list-group">
-  {% for profile in profiles %}
+    {% for profile in profiles %}
     <a href="../../resume/{{profile.id}}" class="list-group-item list-group-item-action">
       <h1>{{profile.first_name}} {{profile.last_name}}</h1>
       <h6>
@@ -15,19 +15,20 @@
         {% endif %}
       </h6>
     </a>
-    
-    <!-- <div class="container py-5 border border-2 border-dark rounded-3 my-1">
-      <h1>{{profile.first_name}} {{profile.last_name}}</h1>
-      <h6>
-        {% if profile.confirmed == True %}
-        <span class="badge bg-success">تایید شده</span>
-        {% else %}
-        <span class="badge bg-danger">تایید نشده</span>
-        {% endif %}
-      </h6>
-      <a href="../../resume/{{profile.id}}" class="btn btn-primary btn-md">مشاهده</a>
-    </div> -->
     {% endfor %}
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        {% if profiles.has_previous == True %}
+        <li class="page-item"><a class="page-link" href="?page={{profiles.previous_page_number}}">قبلی</a></li>
+        {% endif %}
+        {% for page in pages.page_range %}
+        <li class="page-item"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+        {% endfor %}
+        {% if profiles.has_next == True %}
+        <li class="page-item"><a class="page-link" href="?page={{profiles.next_page_number}}">بعدی</a></li>
+        {% endif %}
+      </ul>
+    </nav>
   </div>
 </div>
 
